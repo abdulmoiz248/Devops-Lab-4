@@ -1,0 +1,21 @@
+{
+    "name": "quote-of-the-day",
+    "version": "1.0.0",
+    "description": "A simple API to serve inspirational quotes",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 0"
+    },
+    "dependencies": {
+        "express": "^4.18.2",
+        "cors": "^2.8.5"
+    },
+    "keywords": [
+        "kubernetes",
+        "docker",
+        "demo"
+    ],
+    "author": "DevOps Student",
+    "license": "ISC"
+}
