@@ -16,4 +16,4 @@ spec:
         - name: kube-lab-app
           image: kube-lab-app:v1
           ports:
-            - containerPort: 8080
+            - containerPort: 3000
