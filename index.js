@@ -1,10 +1,15 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.send('Hello from Kubernetes!');
+});
+
 app.use(express.static('public'));
 
 const quotes = [
@@ -35,6 +40,8 @@ app.get('/health', (req, res) => {
     res.status(200).json({ status: 'UP' });
 });
 
+
 app.listen(port, () => {
+    console.log("Hello from Kubernetes!")
     console.log(`Quote app listening on port ${port}`);
 });
