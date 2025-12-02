@@ -5,6 +5,7 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 const quotes = [
     { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
@@ -14,12 +15,16 @@ const quotes = [
     { text: "Code is like humor. When you have to explain it, it’s bad.", author: "Cory House" },
     { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
     { text: "Experience is the name everyone gives to their mistakes.", author: "Oscar Wilde" },
-    { text: "Java is to JavaScript what car is to Carpet.", author: "Chris Heilmann" }
+    { text: "Java is to JavaScript what car is to Carpet.", author: "Chris Heilmann" },
+    { text: "Simplicity is the soul of efficiency.", author: "Austin Freeman" },
+    { text: "Make it work, make it right, make it fast.", author: "Kent Beck" },
+    { text: "Fix the cause, not the symptom.", author: "Steve Maguire" },
+    { text: "Optimism is an occupational hazard of programming: feedback is the treatment.", author: "Kent Beck" },
+    { text: "When to use iterative development? You should use iterative development only on projects that you want to succeed.", author: "Martin Fowler" },
+    { text: "Before software can be reusable it first has to be usable.", author: "Ralph Johnson" },
+    { text: "It’s not a bug – it’s an undocumented feature.", author: "Anonymous" },
+    { text: "Deleted code is debugged code.", author: "Jeff Sickel" }
 ];
-
-app.get('/', (req, res) => {
-    res.json({ message: "Welcome to the Quote of the Day API! Visit /quote for a quote." });
-});
 
 app.get('/quote', (req, res) => {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
